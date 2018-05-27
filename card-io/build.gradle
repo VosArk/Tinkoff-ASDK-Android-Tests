@@ -1,8 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 dependencies {
     compile 'io.card:android-sdk:5.4.1'
     compile project(':ui')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 android {
@@ -37,3 +39,6 @@ android {
 }
 
 apply from: '../gradle/publish-lib.gradle'
+repositories {
+    mavenCentral()
+}

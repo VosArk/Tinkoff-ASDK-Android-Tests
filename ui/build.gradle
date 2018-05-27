@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 def coreVersion = '3.1.7'
 
@@ -8,8 +9,10 @@ dependencies {
     compile 'com.android.support:support-v4:27.0.2'
     compile 'com.android.support:transition:27.0.2'
     compile "ru.tinkoff.core:core-nfc:${coreVersion}"
+    testCompile 'junit:junit:4.12'
 
     compile project(':core')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 android {
@@ -44,3 +47,6 @@ android {
 }
 
 apply from: '../gradle/publish-lib.gradle'
+repositories {
+    mavenCentral()
+}
